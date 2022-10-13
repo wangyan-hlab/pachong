@@ -1,3 +1,4 @@
 /.idea
-/avatars_*
 /venv
+*.jpg
+*.png
