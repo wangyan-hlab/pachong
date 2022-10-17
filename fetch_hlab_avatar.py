@@ -34,19 +34,19 @@ def pachong(suffix, enable_proxy):
     obj = bf(html.read(), 'html.parser')
     pic_info = obj.find_all('img')
 
-    if os.path.exists(f'avatars_{suffix}'):
+    if os.path.exists(f'images/avatars_{suffix}'):
         print("文件夹已存在")
     else:
-        os.mkdir(f'avatars_{suffix}')
+        os.mkdir(f'images/avatars_{suffix}')
 
     logo_pic_info = obj.find_all('img', class_="")
     for index, _ in enumerate(pic_info):
         logo_url = logo_pic_info[index]['data-src']
         print(logo_url)
-        if os.path.exists(f'avatars_{suffix}/avatar_{index}.png'):
-            print(f'文件 avatars_{suffix}/avatar_{index}.png 已存在')
+        if os.path.exists(f'images/avatars_{suffix}/avatar_{index}.png'):
+            print(f'文件 images/avatars_{suffix}/avatar_{index}.png 已存在')
         else:
-            urlretrieve(logo_url, f'avatars_{suffix}/avatar_{index}.png')
+            urlretrieve(logo_url, f'images/avatars_{suffix}/avatar_{index}.png')
 
 
 if __name__ == '__main__':
